@@ -1,0 +1,17 @@
+{
+	"schemaVersion": 1,
+	"id": "wayline",
+	"version": "1.0.0",
+	"name": "Wayline",
+	"description": "Per-world coordinate bookmarks with show/hide toggles and a simple distance + direction HUD. Client-side only; shows nothing the game wouldn't let you note down yourself.",
+	"authors": ["You"],
+	"license": "CC0-1.0",
+	"environment": "client",
+	"entrypoints": { "client": ["com.wayline.client.WaylineClient"] },
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
