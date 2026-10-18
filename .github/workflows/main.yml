@@ -16,10 +16,14 @@ jobs:
         with:
           gradle-version: 9.7.1
       - name: Build
-        run: gradle build
+        run: |
+          DIR=$(dirname "$(find . -name settings.gradle -not -path './.git/*' | head -1)")
+          echo "Building in $DIR"
+          cd "$DIR"
+          gradle build
       - uses: actions/upload-artifact@v4
         with:
           name: wayline-jar
           path: |
-            build/libs/*.jar
-            !build/libs/*-sources.jar
+            **/build/libs/*.jar
+            !**/build/libs/*-sources.jar
